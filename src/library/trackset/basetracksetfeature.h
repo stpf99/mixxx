@@ -13,6 +13,7 @@ class BaseTrackSetFeature : public LibraryFeature {
             const QString& rootViewName,
             const QString& iconName);
 
+    void pasteChild(const QModelIndex& index) override;
   signals:
     void analyzeTracks(const QList<AnalyzerScheduledTrack>&);
 

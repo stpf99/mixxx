@@ -34,6 +34,7 @@ class WTrackTableView : public WLibraryTableView {
     void onShow() override;
     bool hasFocus() const override;
     void setFocus() override;
+    void pasteFromSidebar() override;
     void keyPressEvent(QKeyEvent* event) override;
     void activateSelectedTrack() override;
     void loadSelectedTrackToGroup(const QString& group, bool play) override;
@@ -45,6 +46,12 @@ class WTrackTableView : public WLibraryTableView {
     void setSelectedTracks(const QList<TrackId>& tracks);
     TrackId getCurrentTrackId() const;
     bool setCurrentTrackId(const TrackId& trackId, int column = 0, bool scrollToTrack = false);
+
+    void removeSelectedTracks();
+    void cutSelectedTracks();
+    void copySelectedTracks();
+    void pasteTracks(const QModelIndex& index);
+    void selectTracksById(const QList<TrackId>& tracks, int prevColumn);
 
     double getBackgroundColorOpacity() const {
         return m_backgroundColorOpacity;
