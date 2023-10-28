@@ -154,9 +154,9 @@ void SidebarModel::clear(const QModelIndex& index) {
     if (index.internalPointer() == this) {
         m_sFeatures[index.row()]->clear();
     } else {
-        TreeItem* tree_item = (TreeItem*)index.internalPointer();
-        if (tree_item) {
-            LibraryFeature* feature = tree_item->feature();
+        TreeItem* pTreeItem = (TreeItem*)index.internalPointer();
+        if (pTreeItem) {
+            LibraryFeature* feature = pTreeItem->feature();
             feature->clearChild(index);
         }
     }
@@ -166,9 +166,9 @@ void SidebarModel::cut(const QModelIndex& index) {
     if (index.internalPointer() == this) {
         m_sFeatures[index.row()]->cut();
     } else {
-        TreeItem* tree_item = (TreeItem*)index.internalPointer();
-        if (tree_item) {
-            LibraryFeature* feature = tree_item->feature();
+        TreeItem* pTreeItem = (TreeItem*)index.internalPointer();
+        if (pTreeItem) {
+            LibraryFeature* feature = pTreeItem->feature();
             feature->cutChild(index);
         }
     }
@@ -178,9 +178,9 @@ void SidebarModel::copy(const QModelIndex& index) const {
     if (index.internalPointer() == this) {
         m_sFeatures[index.row()]->copy();
     } else {
-        TreeItem* tree_item = (TreeItem*)index.internalPointer();
-        if (tree_item) {
-            LibraryFeature* feature = tree_item->feature();
+        TreeItem* pTreeItem = (TreeItem*)index.internalPointer();
+        if (pTreeItem) {
+            LibraryFeature* feature = pTreeItem->feature();
             feature->copyChild(index);
         }
     }
@@ -190,9 +190,9 @@ void SidebarModel::paste(const QModelIndex& index) {
     if (index.internalPointer() == this) {
         m_sFeatures[index.row()]->paste();
     } else {
-        TreeItem* tree_item = (TreeItem*)index.internalPointer();
-        if (tree_item) {
-            LibraryFeature* feature = tree_item->feature();
+        TreeItem* pTreeItem = (TreeItem*)index.internalPointer();
+        if (pTreeItem) {
+            LibraryFeature* feature = pTreeItem->feature();
             feature->pasteChild(index);
         }
     }
@@ -202,9 +202,9 @@ void SidebarModel::selectAll(const QModelIndex& index) {
     if (index.internalPointer() == this) {
         m_sFeatures[index.row()]->selectAll();
     } else {
-        TreeItem* tree_item = (TreeItem*)index.internalPointer();
-        if (tree_item) {
-            LibraryFeature* feature = tree_item->feature();
+        TreeItem* pTreeItem = (TreeItem*)index.internalPointer();
+        if (pTreeItem) {
+            LibraryFeature* feature = pTreeItem->feature();
             feature->selectAllChild(index);
         }
     }
