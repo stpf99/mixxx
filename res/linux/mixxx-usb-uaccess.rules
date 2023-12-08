@@ -49,6 +49,8 @@ SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTRS{idVendor}=="200c", TAG+="uac
 SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTRS{idVendor}=="0582", TAG+="uaccess"
 # Sony Corp.
 SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTRS{idVendor}=="054c", TAG+="uaccess"
+# Power Dynamics
+SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTRS{idVendor}=="5131", TAG+="uaccess"
 
 # Missing:
 # - American Musical Supply (AMS/Mixars)
